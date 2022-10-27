@@ -1,3 +1,35 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@hongshunanhai 
+Tartarus2014
+/
+Loon-Script
+Public
+Code
+Issues
+16
+Pull requests
+1
+Actions
+Projects
+Security
+Insights
+Loon-Script/Plugin/Unlock/TikTokKR.plugin
+@Tartarus2014
+Tartarus2014 Update TikTokKR.plugin
+Latest commit 3ae9258 on 13 May
+ History
+ 1 contributor
+27 lines (23 sloc)  944 Bytes
+
+#!name= TikTokKR
+#!icon= https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/TikTok.png
+
 [Rule]
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibytedtos.com
@@ -12,10 +44,29 @@ DOMAIN-KEYWORD,-tiktokcdn-com
 USER-AGENT,tiktok*
 
 [URL Rewrite]
-(?<=_region=)CN(?=&) US 307
+(?<=_region=)CN(?=&) KR 307
+(^h.+v5\/)(.+) $1 302
 (?<=&mcc_mnc=)4 2 307
-^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$4 302
-(?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 17 307
+(?<=eme\/v)2(?=\/f\w{2}d\/\?.*) 1 302
+
+[Script]
+http-response https?:\/\/.*\.tiktokv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list|aweme\/favorite) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Tiktok.js, requires-body=true, tag=TK去水印
 
 [MITM]
-hostname = *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com
+hostname = *.tiktokv.com,*.byteoversea.com, *.tik-tokapi.com
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loon-Script/TikTokKR.plugin at master · Tartarus2014/Loon-Script Octotree
+ Login with GitHub
