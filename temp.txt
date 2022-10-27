@@ -8,3 +8,6 @@ https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Loon/TikTok.list
 (?<=eme\/v)2(?=\/f\w{2}d\/\?.*) 1 302
 [MITM]
 hostname = *.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com
+
+
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Loon_sd_cn.conf
